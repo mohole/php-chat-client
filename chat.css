@@ -1,0 +1,64 @@
+body {
+  background-color: #fefefe;
+}
+
+.card.login {
+  position: fixed;;
+  top: 50px;
+  left: 50%;
+  width: 500px;
+  margin-left: -250px;
+  transition: all 1s ease;
+  z-index: 2;
+}
+
+.card.login.hide {
+  top: -400px;
+}
+
+.card.login label{
+  display: block;
+  margin-top: 15px;
+}
+
+.card.login button {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.container.chat{
+  padding-top: 40px;
+}
+
+.container.chat.hide {
+  opacity: 0;
+}
+
+.alert {
+  cursor: pointer;
+}
+
+.messages {
+  padding: 20px 0;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.messages li {
+  margin: 5px 0;
+}
+
+.messages li .badge {
+  font-size: 0.9em;
+}
+
+.messages li span.time {
+  display: block;
+  font-size: 0.6em;
+  font-style: italic;
+}
+
+.messages li.owner{
+  text-align: right;
+}

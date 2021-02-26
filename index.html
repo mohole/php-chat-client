@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./chat.css">
+  <script type="module" src="./js/chat.js"></script>
+
+  <title>Simple chat client</title>
+</head>
+
+<body>
+
+  <!-- Fake login -->
+  <div class="card login shadow">
+    <div class="card-body">
+      <h3>Login to continue:</h3>
+      <form autocomplete="off">
+        <label for="login">Username:</label>
+        <input type="text" class="form-control user" minlength="3" required placeholder="ex: pedro2000" 
+          autocomplete="off" name="login">
+        <label for="login">Password:</label>
+        <input type="password" class="form-control pswd" minlength="2" required name="pswd"
+          autocomplete="off">
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+    </div>
+
+  </div>
+
+  <section class="container chat hide">
+
+    <h1>Mohole chat with PHP + JS</h1>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <!-- Where to show the messages -->
+        <ul class="messages list-unstyled"></ul>
+
+        <!-- Alert message, visible only when error happens -->
+        <div class="alert alert-danger d-none">
+          Can't send the message!
+        </div>
+
+        <!-- Where the user type and send a message -->
+        <form autocomplete="off">
+          <strong>
+            <label for="message" class="username"></label>
+          </strong>
+          
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Message here..." name="message">
+            <button class="btn btn-primary" type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>
