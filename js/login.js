@@ -13,7 +13,7 @@ const Login = () => {
       pswd: q('.login .pswd').value
     }
 
-    fetch(`${CHAT_API}/login`, {
+    fetch(`${CHAT_API}/login.php`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

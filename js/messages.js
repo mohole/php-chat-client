@@ -19,7 +19,7 @@ const Messages = () => {
       owner: JSON.parse(local).userID
     };
 
-    fetch(`${CHAT_API}/messages`, {
+    fetch(`${CHAT_API}/message.php`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

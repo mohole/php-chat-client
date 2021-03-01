@@ -5,7 +5,7 @@ import { Messages } from './messages.js';
 
 // Get data from server
 const getRemoteData = () => {
-  fetch(`${CHAT_API}/messages`)
+  fetch(`${CHAT_API}/messages.php`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -30,6 +30,11 @@ window.addEventListener('DOMContentLoaded', () => {
   q('.alert').addEventListener('click', () => {
     q('.alert').classList.add('d-none')
   });
+
+  q('#logout').addEventListener('click', () => {
+    localStorage.removeItem('mohole-chat');
+    location.reload();
+  });
 });
 
 const initChat = () => {
@@ -40,5 +45,7 @@ const initChat = () => {
   getRemoteData();
 
   // get new data from server every 0.5 seconds
-  setInterval(() => getRemoteData(), 500);
+  // setInterval(() => getRemoteData(), 500);
+  // changed to 2 sec for dev env
+  setInterval(() => getRemoteData(), 2000);
 }
