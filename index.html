@@ -15,6 +15,13 @@
 
 <body>
 
+  <section class="container">
+    <div class="alert alert-danger d-none">
+      There was an error.
+    </div>
+  </section>
+  
+
   <!-- Fake login -->
   <div class="card login shadow">
     <div class="card-body">
@@ -40,11 +47,6 @@
       <div class="card-body">
         <!-- Where to show the messages -->
         <ul class="messages list-unstyled"></ul>
-
-        <!-- Alert message, visible only when error happens -->
-        <div class="alert alert-danger d-none">
-          Can't send the message!
-        </div>
 
         <!-- Where the user type and send a message -->
         <form autocomplete="off">

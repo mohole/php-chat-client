@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Login();
   Messages();
 
-  if (local) {
+  if (local()) {
     initChat();
   }
 
@@ -33,13 +33,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   q('#logout').addEventListener('click', () => {
     localStorage.removeItem('mohole-chat');
-    location.reload();
+    q('.login').classList.remove('hide');
+    q('.chat').classList.add('hide');
   });
 });
 
 const initChat = () => {
   q('.login').classList.add('hide');
   q('.chat').classList.remove('hide');
+
+  q('.alert.alert-danger').classList.add('d-none');
 
   // Get data from server - first load
   getRemoteData();

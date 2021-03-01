@@ -2,8 +2,11 @@
 // CHANGE THIS!
 const CHAT_API = 'http://localhost:3004';
 
-// LocalStorage data location
-const local = localStorage.getItem('mohole-chat');
+/**
+ * Check for the existance of local data
+ * @returns {DOMString|null} the value of the key. If the key does not exist, null is returned
+ */
+const local = () => localStorage.getItem('mohole-chat');
 
 /**
  * Faster-to-type document.querySelector() wrapper
@@ -19,8 +22,8 @@ const q = (selectors) => document.querySelector(selectors);
  */
 const renderMessages = (data = [], container) => {
   const messages = data.map((msg,i) => {
-    const userID = JSON.parse(local).userID;
-    const condition = msg.owner === userID;
+    const userID = JSON.parse(local()).userID;
+    const condition = msg.owner === parseInt(userID);
     // Ternary operator: "if" condition, the shorter version
     const owner = condition ? 'bg-primary' : 'bg-secondary';
     // Create a new Date object from existing value
@@ -32,6 +35,7 @@ const renderMessages = (data = [], container) => {
     </li>`;
     return tmpl;
   });
+  
   container.innerHTML = messages.join(' ');
 }
 

@@ -22,12 +22,22 @@ const Login = () => {
     })
       .then((response) => response.json())
       .then((user) => {
+        // Remove alert if visible 
+        q('.alert.alert-danger').classList.add('d-none');
+
+        // Empty login form
+        q('.login form').reset();
+        
+        // Notify chat.js of succesful login
         const event = new CustomEvent('login');
         document.dispatchEvent(event);
+
+        // Locally save user data
         localStorage.setItem('mohole-chat', JSON.stringify(user));
       })
       // Handle failure case
       .catch((error) => {
+        q('.alert.alert-danger').classList.remove('d-none');
         console.error(error);
       });
 

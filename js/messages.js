@@ -16,7 +16,7 @@ const Messages = () => {
       // Create a new Date object and convert it to ISO specification format
       timestamp: new Date().toISOString(),
       // Read user ID from localStorage
-      owner: JSON.parse(local).userID
+      owner: JSON.parse(local()).userID
     };
 
     fetch(`${CHAT_API}/message`, {

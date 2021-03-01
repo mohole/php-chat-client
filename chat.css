@@ -2,9 +2,17 @@ body {
   background-color: #fefefe;
 }
 
+.alert.alert-danger {
+  margin-top: 20px;
+}
+
+.alert.alert-danger.hide {
+  font-display: none;
+}
+
 .card.login {
   position: fixed;;
-  top: 50px;
+  top: 150px;
   left: 50%;
   width: 500px;
   margin-left: -250px;
