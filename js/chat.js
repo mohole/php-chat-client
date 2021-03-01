@@ -5,7 +5,7 @@ import { Messages } from './messages.js';
 
 // Get data from server
 const getRemoteData = () => {
-  fetch(`${CHAT_API}/messages.php`)
+  fetch(`${CHAT_API}/messages`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
